@@ -8,8 +8,15 @@ Public Class Form1
         da.Fill(ds, "produit")
         dgvproduit.DataSource = ds.Tables("produit")
     End Sub
+    Public Function champ_remplit()
+        Return txtref.Text <> "" And txtqstock.Text <> "" And txtprixu.Text <> "" And txtdesg.Text <> ""
 
-    Private Sub dgvproduit_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvproduit.CellContentClick
+    End Function
 
+
+    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        cmdb = New SqlCommandBuilder(da)
+        da.Update(ds, "produit")
+        MsgBox("mise a jour effectuee")
     End Sub
 End Class
