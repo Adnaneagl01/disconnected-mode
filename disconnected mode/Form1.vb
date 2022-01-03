@@ -1,0 +1,9 @@
+﻿Imports System.Data.SqlClient
+Public Class Form1
+    Dim ds As New DataSet
+    Dim da As SqlDataAdapter
+    Dim cb As SqlCommandBuilder
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+End Class
